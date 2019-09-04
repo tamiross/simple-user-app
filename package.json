@@ -11,6 +11,7 @@
   "author": "Tamir Kitay",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/icons": "^4.2.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.1",
