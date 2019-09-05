@@ -2,12 +2,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Header } from '@components/header/header';
-import { colors } from '@colors';
-import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { addUser, reset, deleteUser, fetchDemoData } from '@store/actions';
 import { getDemoData } from '@helpers';
-import styled from 'styled-components';
 import Card from '@components/card/card';
 import { styles } from './styles';
 
