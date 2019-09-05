@@ -8,12 +8,9 @@ import { Link } from 'react-router-dom';
 import { addUser, reset, deleteUser, fetchDemoData } from '@store/actions';
 import { getDemoData } from '@helpers';
 import styled from 'styled-components';
+import Card from '@components/card/card';
+import { styles } from './styles';
 
-const ActionButton = styled.button`
-font-size: 20px;
-background: #eca200;
-border: 1px solid green;
-`;
 
 class Home extends Component {
     constructor(props) {
@@ -55,6 +52,32 @@ class Home extends Component {
         this.props.dispatch(reset())
     }
 
+    renderCard(user) {
+        console.log('USER OBJ: ', user)
+        const props = {
+            key: user.id,
+            name: user.name,
+            email: user.email,
+            address: user.address,
+            className: 'col-12 col-md-6 col-lg-4 col-xl-3',
+            style: styles
+        }
+
+        return <Card {...props} />
+    }
+
+    renderCards() {
+        const { users } = this.props;
+
+        if (!users)
+            return null;
+
+        return users.map(user => {
+            return this.renderCard(user);
+        })
+
+    }
+
     render() {
         const { isDataLoaded, users } = this.state;
 
@@ -65,40 +88,11 @@ class Home extends Component {
             <>
                 <Header text='THIS IS HEADER!! ' />
                 <div className='container'>
-                    <h1 style={{ color: colors.hoverBlue }}>Welcome to React!</h1>
-                    <hr />
-                    <Link to={'/discover'}>
-                        <Button variant="contained" color="primary">
-                            Hello World~~
-                    </Button>
-                    </Link>
-
-                    <Button variant="contained" color="primary" onClick={this.onAddUserClick}>
-                        ADD USER
-                </Button>
-
-                    <Button variant="contained" color="primary" onClick={this.onRemoveUserClick}>
-                        DELETE USER
-                </Button>
-
-                    <Button variant="contained" color="primary" onClick={this.onResetClick}>
-                        RESET !
-                </Button>
-                    <p>
-                        Users counter:
-                </p>
-                    <h1>
-                        {this.props.count}
-                    </h1>
-                    <ul>
-                        {users.map(user => (
-                            <li key={user.id}>
-                                Name: {user.name} | Email: {user.email}
-                            </li>
-                        ))}
-                    </ul>
+                    <div style={styles.cardsWrapper} className="row">
+                        {this.renderCards()}
+                    </div>
                 </div>
-                <ActionButton>CREATE</ActionButton>
+                <hr />
             </>
         )
     }
