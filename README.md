@@ -10,4 +10,5 @@ Clone or download this repo and run `npm i`.
 - [x] install **babel**: `npm i -D @babel/core @babel/preset-env @babel/preset-react html-webpack-plugin`.
 - [x] install **react** & **react-dom**: `npm i react react-dom`.
 - [x] install **redux** & **react-redux**: `npm i redux react-redux`.
-- [x] install **material-ui**: `npm install @material-ui/core`.
+- [x] install **material-ui**: `npm install -S @material-ui/core`.
+- [x] install **react-router**: `npm i -S react-router-dom`.
