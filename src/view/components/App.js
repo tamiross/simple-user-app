@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '@css/normalize.css';
 import '@css/bootstrap-grid.css';
+import '@css/bootstrap-align.css';
 import './App.css';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';

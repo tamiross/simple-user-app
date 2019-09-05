@@ -11,18 +11,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 export const Header = props => {
     return (
-        <div style={styles.base}>   
-            <Navbar />
+        <div style={styles.base}>
+            <div className="container">
+                <Navbar />
+            </div>
         </div>
     )
 }
-
-// export class Header extends Component {
-//     render() {
-//         return (
-//             <div style={styles.base}>
-//                 HEADER
-//             </div>
-//         )
-//     }
-// }
