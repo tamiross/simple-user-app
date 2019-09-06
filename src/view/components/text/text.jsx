@@ -14,6 +14,5 @@ export default class Text extends Component {
 }
 
 Text.propTypes  = {
-    children: PropTypes.element,
     style: PropTypes.object
 }

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Header } from '@components/header/header';
 import { Link } from 'react-router-dom';
-import { addUser, reset, deleteUser, fetchDemoData } from '@store/actions';
+import { addUser, removeUser, fetchDemoData } from '@store/actions';
 import { getDemoData } from '@helpers';
 import Card from '@components/card/card';
 import { styles } from './styles';
@@ -38,15 +38,14 @@ class Home extends Component {
         this.props.dispatch(addUser())
     }
 
-    onRemoveUserClick = () => {
-        console.log('REMOVE USER CLICK')
-        this.props.dispatch(deleteUser())
+    onRemoveUserClick = (e) => {
+        console.log('REMOVE USER CLICK', e.target)
+        this.props.dispatch(removeUser())
 
     }
-
-    onResetClick = () => {
-        console.log('RESET!')
-        this.props.dispatch(reset())
+    
+    onEditUserClick = () => {
+        console.log('EDIT')
     }
 
     renderCard(user) {
@@ -57,7 +56,9 @@ class Home extends Component {
             email: user.email,
             address: user.address,
             className: 'col-12 col-md-6 col-lg-4 col-xl-3',
-            style: styles
+            style: styles,
+            onRemoveUserClick: this.onRemoveUserClick,
+            onEditUserClick: this.onEditUserClick
         }
 
         return <Card {...props} />

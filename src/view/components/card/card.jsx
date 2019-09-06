@@ -13,7 +13,7 @@ export default class Card extends Component {
     renderEmail() {
         const { email } = this.props;
 
-        return <Text>{email}</Text>
+        return <Text style={{ color: 'blue'}}>{email}</Text>
     }
 
     renderAddress() {
@@ -28,10 +28,11 @@ export default class Card extends Component {
     }
 
     renderActionButtons() {
+        const { onRemoveUserClick, onEditUserClick } = this.props;
         return (
             <ActionButtonWrapper className="action-buttons">
-                <ActionButton>Delete</ActionButton>
-                <span>Edit</span>
+                <ActionButton onClick={onRemoveUserClick}>Remove</ActionButton>
+                <ActionButton onClick={onEditUserClick}>Edit</ActionButton>
                 <span></span>
             </ActionButtonWrapper>
         )
@@ -56,9 +57,8 @@ export default class Card extends Component {
 
 Card.propTypes = {
     className: PropTypes.string,
-    style: {},
-    address: {},
+    style: PropTypes.object,
+    address: PropTypes.object,
     email: PropTypes.string,
     name: PropTypes.string,
-    enableMultiline: PropTypes.boolean
 }

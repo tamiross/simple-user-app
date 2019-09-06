@@ -7,7 +7,6 @@ background: ${colors.white};
 border-radius: 8px;
 padding: 16px;
 margin: 8px 0;
-// height: 100%;
 `
 
 export const Title = styled.div`
