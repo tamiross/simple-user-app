@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Base, Title, Hr, ActionButton, ActionButtonWrapper } from './styles';
 import Text from '@components/text/text';
 import PropTypes from 'prop-types';
+import IconButton from '@material-ui/core/IconButton';
+import CommentIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 export default class Card extends Component {
     renderName() {
@@ -13,12 +16,12 @@ export default class Card extends Component {
     renderEmail() {
         const { email } = this.props;
 
-        return <Text style={{ color: 'blue'}}>{email}</Text>
+        return <Text style={{ color: 'blue' }}>{email}</Text>
     }
 
     renderAddress() {
         const { address, style } = this.props;
-        
+
         return (
             <div style={style.address}>
                 <Text>City: {address.city}</Text>
@@ -27,13 +30,27 @@ export default class Card extends Component {
         )
     }
 
-    renderActionButtons() {
-        const { onRemoveUserClick, onEditUserClick } = this.props;
+    renderDeleteButton() {
+        return (
+            <IconButton onClick={() => this.openEditDialog(value)}>
+                <DeleteIcon />
+            </IconButton>
+        )
+    }
+
+    renderEditButton() {
+        return (
+            <IconButton onClick={() => this.openEditDialog(value)}>
+                <CommentIcon />
+            </IconButton>
+        )
+    }
+
+    renderActionButtons() {        
         return (
             <ActionButtonWrapper className="action-buttons">
-                <ActionButton onClick={onRemoveUserClick}>Remove</ActionButton>
-                <ActionButton onClick={onEditUserClick}>Edit</ActionButton>
-                <span></span>
+                {this.renderEditButton()}
+                {this.renderDeleteButton()}
             </ActionButtonWrapper>
         )
     }

@@ -7,7 +7,8 @@ import { addUser, removeUser, fetchDemoData } from '@store/actions';
 import { getDemoData } from '@helpers';
 import Card from '@components/card/card';
 import { styles } from './styles';
-
+import Button from '@material-ui/core/Button';
+import AddIcon from '@material-ui/icons/Add';
 
 class Home extends Component {
     constructor(props) {
@@ -43,7 +44,7 @@ class Home extends Component {
         this.props.dispatch(removeUser())
 
     }
-    
+
     onEditUserClick = () => {
         console.log('EDIT')
     }
@@ -76,6 +77,21 @@ class Home extends Component {
 
     }
 
+    renderPlusButton() {
+        const props = {
+            variant: 'contained',
+            style: styles.plusButton,
+            onClick: this.openDialog,
+            color: 'secondary'
+        }
+
+        return (
+            <Button {...props}>
+                <AddIcon />
+            </Button>
+        )
+    }
+
     render() {
         const { isDataLoaded, users } = this.state;
 
@@ -90,7 +106,7 @@ class Home extends Component {
                         {this.renderCards()}
                     </div>
                 </div>
-                <hr />
+                {this.renderPlusButton()}
             </>
         )
     }
