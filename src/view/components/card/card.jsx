@@ -31,8 +31,10 @@ export default class Card extends Component {
     }
 
     renderDeleteButton() {
+        const { onDeleteUserClick } = this.props;
+
         return (
-            <IconButton onClick={() => this.openEditDialog(value)}>
+            <IconButton onClick={onDeleteUserClick}>
                 <DeleteIcon />
             </IconButton>
         )
@@ -40,7 +42,7 @@ export default class Card extends Component {
 
     renderEditButton() {
         return (
-            <IconButton onClick={() => this.openEditDialog(value)}>
+            <IconButton>
                 <CommentIcon />
             </IconButton>
         )

@@ -14,7 +14,7 @@ export const styles = {
     },
 
     plusButton: {
-        position: "absolute",
+        position: 'absolute',
         bottom: 10,
         right: 10,
         outline: 'none'

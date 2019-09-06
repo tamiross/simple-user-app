@@ -2,8 +2,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Header } from '@components/header/header';
-import { Link } from 'react-router-dom';
-import { addUser, removeUser, fetchDemoData } from '@store/actions';
+import { addUser, deleteUser, fetchDemoData } from '@store/actions';
 import { getDemoData } from '@helpers';
 import Card from '@components/card/card';
 import { styles } from './styles';
@@ -39,9 +38,9 @@ class Home extends Component {
         this.props.dispatch(addUser())
     }
 
-    onRemoveUserClick = (e) => {
-        console.log('REMOVE USER CLICK', e.target)
-        this.props.dispatch(removeUser())
+    onDeleteUserClick = (e) => {
+        console.log('DELETE USER CLICK')
+        this.props.dispatch(deleteUser())
 
     }
 
@@ -58,7 +57,7 @@ class Home extends Component {
             address: user.address,
             className: 'col-12 col-md-6 col-lg-4 col-xl-3',
             style: styles,
-            onRemoveUserClick: this.onRemoveUserClick,
+            onDeleteUserClick: this.onDeleteUserClick,
             onEditUserClick: this.onEditUserClick
         }
 
@@ -66,6 +65,11 @@ class Home extends Component {
     }
 
     renderCards() {
+        const { isDataLoaded } = this.state;
+
+        if (!isDataLoaded)
+            return null;
+
         const { users } = this.props;
 
         if (!users)
@@ -93,11 +97,6 @@ class Home extends Component {
     }
 
     render() {
-        const { isDataLoaded, users } = this.state;
-
-        if (!isDataLoaded)
-            return null;
-
         return (
             <>
                 <Header text='THIS IS HEADER!! ' />
@@ -120,3 +119,8 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(Home)
+
+// Home.propTypes = {
+//     dispatch: propTypes.func,
+//     // users: propTypes.array
+// }
