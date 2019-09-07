@@ -44,6 +44,7 @@ module.exports = {
             '@components': path.resolve(__dirname, './src/view/components'),
             '@colors': path.resolve(__dirname, './src/view/colors'),
             '@pages': path.resolve(__dirname, './src/view/pages'),
+            '@texts': path.resolve(__dirname, './src/view/texts'),
             '@css': path.resolve(__dirname, './src/css'),
             '@store': path.resolve(__dirname, './src/store'),
             '@helpers': path.resolve(__dirname, './src/view/helpers')

@@ -4,10 +4,8 @@ import Navbar from '@components/navbar/navbar';
 
 export const Header = props => {
     return (
-        <div style={styles.base}>
-            <div className="container">
+        <div>
                 <Navbar />
-            </div>
         </div>
     )
 }

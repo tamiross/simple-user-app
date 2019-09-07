@@ -8,6 +8,7 @@ import Card from '@components/card/card';
 import { styles } from './styles';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
+import UserList from '@components/user_list/user_list';
 
 class Home extends Component {
     constructor(props) {
@@ -48,39 +49,6 @@ class Home extends Component {
         console.log('EDIT')
     }
 
-    renderCard(user) {
-        console.log('USER OBJ: ', user)
-        const props = {
-            key: user.id,
-            name: user.name,
-            email: user.email,
-            address: user.address,
-            className: 'col-12 col-md-6 col-lg-4 col-xl-3',
-            style: styles,
-            onDeleteUserClick: this.onDeleteUserClick,
-            onEditUserClick: this.onEditUserClick
-        }
-
-        return <Card {...props} />
-    }
-
-    renderCards() {
-        const { isDataLoaded } = this.state;
-
-        if (!isDataLoaded)
-            return null;
-
-        const { users } = this.props;
-
-        if (!users)
-            return null;
-
-        return users.map(user => {
-            return this.renderCard(user);
-        })
-
-    }
-
     renderPlusButton() {
         const props = {
             variant: 'contained',
@@ -101,8 +69,8 @@ class Home extends Component {
             <>
                 <Header text='THIS IS HEADER!! ' />
                 <div className='container'>
-                    <div style={styles.cardsWrapper} className="row">
-                        {this.renderCards()}
+                    <div style={styles.cardsWrapper}>
+                        <UserList users={this.state.users} className='row' />
                     </div>
                 </div>
                 {this.renderPlusButton()}
