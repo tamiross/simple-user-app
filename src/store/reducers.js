@@ -8,15 +8,12 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_USER':
             return {
-                ...state,
-                count: state.count + 1
+                ...state
             };
         case 'DELETE_USER':
-            // console.log('REDUCER  - Payload', action.payload)
-            // console.log('action index', action.index)
             return {
                 ...state,
-                users: [...state.users.filter((post) => post.id !== action.payload)]
+                users: [...state.users.filter((user) => user.id !== action.payload)]
             }
         case 'RESET':
             return {
@@ -24,7 +21,6 @@ const reducer = (state = initialState, action) => {
                 count: 0
             };
         case 'FETCH_DEMO_DATA':
-            let users;
             for (var index in action.payload) {
                 const user = action.payload[index];
                 user.birthDay = 'test'
