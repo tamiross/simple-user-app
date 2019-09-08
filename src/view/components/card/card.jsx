@@ -7,6 +7,9 @@ import CommentIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 export default class Card extends Component {
+    componentDidMount() {
+        // console.log('CARD PROPS >> ', this.props)
+    }
     renderName() {
         const { name } = this.props;
 
@@ -30,13 +33,19 @@ export default class Card extends Component {
         )
     }
 
-    renderDeleteButton() {
+    onDeleteUserClick = (userId) => {
         const { onDeleteUserClick } = this.props;
+        // console.log('USER ID >> ', userId)
+        onDeleteUserClick(userId)
+    }
+
+    renderDeleteButton() {
+        const { id } = this.props;
 
         return (
-            <IconButton onClick={onDeleteUserClick}>
+            <IconButton onClick={() => this.onDeleteUserClick(id)}>
                 <DeleteIcon />
-            </IconButton>
+            </IconButton >
         )
     }
 
@@ -48,7 +57,7 @@ export default class Card extends Component {
         )
     }
 
-    renderActionButtons() {        
+    renderActionButtons() {
         return (
             <ActionButtonWrapper className="action-buttons">
                 {this.renderEditButton()}

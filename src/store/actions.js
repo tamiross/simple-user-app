@@ -6,8 +6,9 @@ export const addUser = () => ({
     type: ADD_USER
 })
 
-export const deleteUser = () => ({
+export const deleteUser = (payload) => ({
     type: DELETE_USER,
+    payload: payload
 })
 
 export const fetchDemoData = (payload) => ({

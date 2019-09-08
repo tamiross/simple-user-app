@@ -7,10 +7,16 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Discover from '@pages/discover';
 import Home from '@pages/home/home';
 
+const APP_BASE_STYLE_CLASS = 'app-body'
+
 export default class App extends Component {
+    componentDidMount() {
+        document.body.classList.add(APP_BASE_STYLE_CLASS);
+    }
+
     render() {
         return (
-            <div className='base-style'>
+            <div>
                 <Router>
                     <Switch>
                         <Route path='/discover' component={Discover} />

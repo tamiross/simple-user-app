@@ -1,6 +1,8 @@
 const texts = {
     viewOnGithub: 'View on github',
-    allUsers: 'All users'
+    allUsers: 'All users',
+    cannotGetInitial: 'Cannot get initial data',
+    pleaseCheckYourConnection: 'Please check your connection to the internet.'
 }
 
 export function loc(textKey, ...args) {

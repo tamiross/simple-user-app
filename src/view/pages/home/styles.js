@@ -9,14 +9,26 @@ export const styles = {
         color: colors.midGrey
     },
 
-    cardsWrapper: {
+    userListWrapper: {
         margin: '32px 0'
     },
 
     plusButton: {
-        position: 'absolute',
-        bottom: 10,
-        right: 10,
+        display: 'block',
+        margin: '0 auto',
+        marginTop: 32,
         outline: 'none'
+    },
+
+    noDataMessage: {
+        display: 'flex',
+        flexDirection: 'column',
+        background: colors.white,
+        border: '1px solid ' + colors.softGrey,
+        borderRadius: 8,
+        padding: 24,
+        marginTop: 32,
+        marginBottom: 32, 
+        textAlign: 'center'
     }
 }

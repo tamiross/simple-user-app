@@ -1,14 +1,15 @@
 
 import React, { Component } from 'react'
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Header } from '@components/header/header';
 import { addUser, deleteUser, fetchDemoData } from '@store/actions';
 import { getDemoData } from '@helpers';
-import Card from '@components/card/card';
 import { styles } from './styles';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import UserList from '@components/user_list/user_list';
+import { loc } from '@texts';
 
 class Home extends Component {
     constructor(props) {
@@ -22,7 +23,6 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        console.log('PROPS', this.props)
         getDemoData()
             .then(json => {
                 this.props.dispatch(fetchDemoData(json));
@@ -31,17 +31,18 @@ class Home extends Component {
                     users: json
                 })
             })
+            .catch(error => {
+                console.log('error white loading data:', error)
+            })
 
     }
 
     onAddUserClick = () => {
-        console.log('ADD USER CLICK')
         this.props.dispatch(addUser())
     }
 
-    onDeleteUserClick = (e) => {
-        console.log('DELETE USER CLICK')
-        this.props.dispatch(deleteUser())
+    onDeleteUserClick = userId => {
+        this.props.dispatch(deleteUser(userId))
 
     }
 
@@ -54,7 +55,7 @@ class Home extends Component {
             variant: 'contained',
             style: styles.plusButton,
             onClick: this.openDialog,
-            color: 'secondary'
+            color: 'secondary',
         }
 
         return (
@@ -64,16 +65,34 @@ class Home extends Component {
         )
     }
 
+    renderNoDataMessage() {
+        return (
+            <div style={styles.noDataMessage}>
+                <h1>{loc('cannotGetInitial')}</h1>
+                <p>{loc('pleaseCheckYourConnection')}</p>
+            </div>
+        )
+    }
+
     render() {
+        const { users, isDataLoaded } = this.state;
+
+        const userListProps = {
+            users: users,
+            className: 'row',
+            onDeleteUserClick: this.onDeleteUserClick,
+            onEditUserClick: this.onEditUserClick
+        }
+
         return (
             <>
-                <Header text='THIS IS HEADER!! ' />
+                <Header />
                 <div className='container'>
-                    <div style={styles.cardsWrapper}>
-                        <UserList users={this.state.users} className='row' />
+                    {this.renderPlusButton()}
+                    <div style={styles.userListWrapper}>
+                        {isDataLoaded ? <UserList {...userListProps} /> : this.renderNoDataMessage()}
                     </div>
                 </div>
-                {this.renderPlusButton()}
             </>
         )
     }
@@ -84,11 +103,13 @@ function mapStateToProps(state) {
         count: state.count,
         users: state.users
     }
-}
+    }
 
 export default connect(mapStateToProps)(Home)
 
-// Home.propTypes = {
-//     dispatch: propTypes.func,
+// Home.PropTypes = {
+    // dispatch: propTypes.func,
 //     // users: propTypes.array
 // }
+
+// proptypes do not work.

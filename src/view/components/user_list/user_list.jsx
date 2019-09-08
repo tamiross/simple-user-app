@@ -4,15 +4,18 @@ import { styles } from './styles';
 
 export default class UserList extends Component {
     renderCard(user) {
+        const { onDeleteUserClick, onEditUserClick } = this.props;
+
         const props = {
+            id: user.id,
             key: user.id,
             name: user.name,
             email: user.email,
             address: user.address,
             className: 'col-12 col-md-6 col-lg-4 col-xl-3',
             style: styles,
-            onDeleteUserClick: this.onDeleteUserClick,
-            onEditUserClick: this.onEditUserClick
+            onDeleteUserClick: onDeleteUserClick,
+            // onEditUserClick: onEditUserClick
         }
 
         return <Card {...props} />

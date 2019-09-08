@@ -8,12 +8,17 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { styles } from './styles';
 import { loc } from '@texts';
 
+function onMenuClick() {
+    console.log('MENU CLICK')
+}
+
 export default function Navbar() {
     const menuIconProps = {
         edge: 'start',
         style: styles.menuButton,
         color: 'inherit',
-        ariaLabel: 'menu'
+        'aria-label': 'menu',
+        onClick: onMenuClick
     }
 
     return (
