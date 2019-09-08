@@ -100,10 +100,9 @@ class Home extends Component {
 
 function mapStateToProps(state) {
     return {
-        count: state.count,
         users: state.users
     }
-    }
+}
 
 export default connect(mapStateToProps)(Home)
 
