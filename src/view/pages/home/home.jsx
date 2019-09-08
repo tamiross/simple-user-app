@@ -75,14 +75,15 @@ class Home extends Component {
     }
 
     render() {
-        const { users, isDataLoaded } = this.state;
-
+        const { isDataLoaded } = this.state;
         const userListProps = {
-            users: users,
+            users: this.props.users,
             className: 'row',
             onDeleteUserClick: this.onDeleteUserClick,
             onEditUserClick: this.onEditUserClick
         }
+
+        const usersList = isDataLoaded ? <UserList {...userListProps} /> : this.renderNoDataMessage()
 
         return (
             <>
@@ -90,7 +91,7 @@ class Home extends Component {
                 <div className='container'>
                     {this.renderPlusButton()}
                     <div style={styles.userListWrapper}>
-                        {isDataLoaded ? <UserList {...userListProps} /> : this.renderNoDataMessage()}
+                        {usersList}
                     </div>
                 </div>
             </>
@@ -100,7 +101,7 @@ class Home extends Component {
 
 function mapStateToProps(state) {
     return {
-        users: state.users
+        users: [...state.users]
     }
 }
 

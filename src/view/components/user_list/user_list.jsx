@@ -23,7 +23,6 @@ export default class UserList extends Component {
 
     renderCards() {
         const { users } = this.props;
-
         if (!users)
             return null;
 

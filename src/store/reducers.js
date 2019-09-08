@@ -17,15 +17,12 @@ const reducer = (state = initialState, action) => {
             }
         case 'RESET':
             return {
-                ...state,
-                count: 0
+                ...state
             };
         case 'FETCH_DEMO_DATA':
             for (var index in action.payload) {
                 const user = action.payload[index];
-                user.birthDay = 'test'
-                // console.log('index >> ', index)
-                // console.log('USER:', user)
+                user.birthDay = 'B day goes here'
             }
 
             return {
