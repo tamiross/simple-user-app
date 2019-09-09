@@ -1,5 +1,6 @@
 export const colors = {
     primaryBlue: '#1976D2',
+    navbarBlue: '#3F51B5',
     white: '#fff',
     lightWhite: '#f4f5fb',
     hoverBlue: '#4141fe',

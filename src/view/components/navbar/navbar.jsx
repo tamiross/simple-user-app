@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { styles } from './styles';
 import { loc } from '@texts';
+import A from '@components/a/a';
 
 function onMenuClick() {
     console.log('MENU CLICK')
@@ -33,9 +34,11 @@ export default function Navbar() {
                         {loc('allUsers')}
                     </Typography>
 
-                    <Button color="inherit">
-                        {loc('viewOnGithub')}
-                    </Button>
+                    <A href={loc('linkToGithub')} style={{ color: 'white'}}>
+                        <Button color="inherit">
+                            {loc('viewOnGithub')}
+                        </Button>
+                    </A>
                 </Toolbar>
             </AppBar>
         </div>
