@@ -1,0 +1,66 @@
+{
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "plugin:sonarjs/recommended",
+        "semistandard",
+        "plugin:react/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "react/self-closing-comp": [
+            "warn",
+            {
+                "component": true,
+                "html": false
+            }
+        ],
+        "brace-style": [
+            "warn",
+            "stroustrup",
+            {
+                "allowSingleLine": true
+            }
+        ],
+        "curly": [
+            "warn",
+            "multi-or-nest"
+        ],
+        "function-paren-newline": [
+            "warn",
+            {
+                "minItems": 6
+            }
+        ],
+        "camelcase": "warn",
+        "no-console": "off",
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "space-before-function-paren": [
+            "warn",
+            {
+                "anonymous": "never",
+                "named": "never",
+                "asyncArrow": "never"
+            }
+        ]
+    },
+}
