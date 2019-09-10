@@ -8,6 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { useStyles } from './styles';
+import * as icons from '@icons';
 
 export default function MenuDrawer(props) {
     console.log('drawer prpos', props)
@@ -21,7 +22,7 @@ export default function MenuDrawer(props) {
             onKeyDown={props.toggleDrawer(side, false)}
         >
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                {['Discover', 'All Users', 'Map View'].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                         <ListItemText primary={text} />
@@ -30,7 +31,7 @@ export default function MenuDrawer(props) {
             </List>
             <Divider />
             <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                {['My Profile', 'My Messages', 'My View History', 'My Schedule'].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                         <ListItemText primary={text} />

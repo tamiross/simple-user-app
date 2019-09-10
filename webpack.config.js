@@ -21,6 +21,11 @@ module.exports = {
                 use: ['style-loader', 'css-loader']
             },
             {
+                test: /\.(svg)$/,
+                include: [path.resolve(__dirname, './src')],
+                loader: 'svg-inline-loader'
+            },
+            {
                 test: /\.s[ac]ss$/i,
                 use: [
                   // Creates `style` nodes from JS strings
@@ -48,7 +53,8 @@ module.exports = {
             '@css': path.resolve(__dirname, './src/css'),
             '@store': path.resolve(__dirname, './src/store'),
             '@helpers': path.resolve(__dirname, './src/view/helpers'),
-            '@utils': path.resolve(__dirname, './src/view/utils')
+            '@utils': path.resolve(__dirname, './src/view/utils'),
+            '@icons': path.resolve(__dirname, './src/assets/icons/index')
         }
 
     },
