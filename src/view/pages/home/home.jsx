@@ -10,6 +10,8 @@ import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import UserList from '@components/user_list/user_list';
 import { loc } from '@texts';
+import Grid from '@material-ui/core/Grid';
+import { Container } from '@material-ui/core';
 
 class Home extends Component {
     constructor(props) {
@@ -78,7 +80,6 @@ class Home extends Component {
         const { isDataLoaded } = this.state;
         const userListProps = {
             users: this.props.users,
-            className: 'row',
             onDeleteUserClick: this.onDeleteUserClick,
             onEditUserClick: this.onEditUserClick
         }
@@ -88,12 +89,11 @@ class Home extends Component {
         return (
             <>
                 <Header />
-                <div className='container'>
-                    {this.renderPlusButton()}
-                    <div style={styles.userListWrapper}>
+                <Container fixed>
+                    <Grid container spacing={2} className='Grid' style={styles.userListWrapper}>
                         {usersList}
-                    </div>
-                </div>
+                    </Grid>
+                </Container>
             </>
         )
     }

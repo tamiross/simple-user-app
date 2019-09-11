@@ -9,6 +9,7 @@ import { styles } from './styles';
 import { loc } from '@texts';
 import A from '@components/a/a';
 import MenuDrawer from '@components/drawer/drawer';
+import { SearchBox } from '@components/search_box/search_box';
 
 export function Header() {
     const [state, setState] = React.useState({
@@ -49,7 +50,7 @@ export function Header() {
             'aria-label': 'menu',
             onClick: toggleDrawer('left', true)
         }
-    
+
         return (
             <IconButton {...props}>
                 <MenuIcon />
@@ -57,13 +58,18 @@ export function Header() {
         )
     }
 
+    const renderSearchBox = () => {
+        return <SearchBox />;
+    }
+
     return (
         <div style={styles.root}>
-            <MenuDrawer state={state} toggleDrawer={toggleDrawer}/>
+            <MenuDrawer state={state} toggleDrawer={toggleDrawer} />
             <AppBar position="static">
                 <Toolbar>
                     {renderMenuIconButton()}
                     {renderTitle()}
+                    {renderSearchBox()}
                     {renderViewOnGithub()}
                 </Toolbar>
             </AppBar>

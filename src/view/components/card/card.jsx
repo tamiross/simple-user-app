@@ -1,92 +1,51 @@
-import React, { Component } from 'react'
-import { Base, Title, Hr, ActionButton, ActionButtonWrapper } from './styles';
-import Text from '@components/text/text';
-import PropTypes from 'prop-types';
-import IconButton from '@material-ui/core/IconButton';
-import CommentIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
-export default class Card extends Component {
-    componentDidMount() {
-        // console.log('CARD PROPS >> ', this.props)
-    }
-    renderName() {
-        const { name } = this.props;
+const useStyles = makeStyles({
+  card: {
+    // maxWidth: 345,
+  },
+});
 
-        return <Title>{name}</Title>
-    }
+export const MediaCard = (props) => {
+    console.log('CARD PROPS >>' , props)
+  const classes = useStyles();
 
-    renderEmail() {
-        const { email } = this.props;
-
-        return <Text style={{ color: 'blue' }}>{email}</Text>
-    }
-
-    renderAddress() {
-        const { address, style } = this.props;
-
-        return (
-            <div style={style.address}>
-                <Text>City: {address.city}</Text>
-                <Text>Street: {address.street}</Text>
-            </div>
-        )
-    }
-
-    onDeleteUserClick = (userId) => {
-        const { onDeleteUserClick } = this.props;
-        // console.log('USER ID >> ', userId)
-        onDeleteUserClick(userId)
-    }
-
-    renderDeleteButton() {
-        const { id } = this.props;
-
-        return (
-            <IconButton onClick={() => this.onDeleteUserClick(id)}>
-                <DeleteIcon />
-            </IconButton >
-        )
-    }
-
-    renderEditButton() {
-        return (
-            <IconButton>
-                <CommentIcon />
-            </IconButton>
-        )
-    }
-
-    renderActionButtons() {
-        return (
-            <ActionButtonWrapper className="action-buttons">
-                {this.renderEditButton()}
-                {this.renderDeleteButton()}
-            </ActionButtonWrapper>
-        )
-    }
-
-    render() {
-        const { className, style } = this.props;
-
-        return (
-            <div style={style} className={className}>
-                <Base>
-                    {this.renderName()}
-                    {this.renderEmail()}
-                    <Hr />
-                    {this.renderAddress()}
-                    {this.renderActionButtons()}
-                </Base>
-            </div>
-        )
-    }
-}
-
-Card.propTypes = {
-    className: PropTypes.string,
-    style: PropTypes.object,
-    address: PropTypes.object,
-    email: PropTypes.string,
-    name: PropTypes.string,
+  return (
+    <Card className={classes.card}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          alt="Contemplative Reptile"
+          height="140"
+          image="/static/images/cards/contemplative-reptile.jpg"
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {props.name}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except Antarctica
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+        <Button size="small" color="primary">
+          Learn More
+        </Button>
+      </CardActions>
+    </Card>
+  );
 }
