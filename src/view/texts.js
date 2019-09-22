@@ -10,7 +10,10 @@ const texts = {
   pleaseCheckYourConnection: 'Please check your connection to the internet.',
   somethingWentWrong: 'Something went wrong',
   weAreCurrentlyWorking: 'We are currently working on fixing the problem',
-  blogPage: 'Blog Page'
+  blogPage: 'Blog Page',
+  share: 'Share',
+  learnMore: 'Learn more',
+  demoText: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'
 }
 
 
