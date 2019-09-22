@@ -13,14 +13,13 @@ export default class UserList extends Component {
             name: user.name,
             email: user.email,
             address: user.address,
-            // className: 'col-12 col-md-6 col-lg-4 col-xl-3',
             style: styles,
             onDeleteUserClick: onDeleteUserClick,
             // onEditUserClick: onEditUserClick
         }
 
         return (
-            <Grid item xs={12} sm={6} md={4} lg={3}>
+            <Grid key={user.id} item xs={12} sm={6} md={4} lg={3}>
                 <Grid container justify='center'>
                     <MediaCard {...props} />
                 </Grid>

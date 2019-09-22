@@ -1,14 +1,14 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Header } from'components/header/header';
+import { Header } from 'components/header/header';
 import { addUser, deleteUser, fetchDemoData } from 'store/actions';
 import { getDemoData } from 'helpers';
 import * as config from 'config';
 import { styles } from './styles';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
-import UserList from'components/user_list/user_list';
+import UserList from 'components/user_list/user_list';
 import { loc } from 'texts';
 import Grid from '@material-ui/core/Grid';
 import { Container } from '@material-ui/core';
@@ -95,6 +95,7 @@ class Home extends Component {
                     <Grid container spacing={2} className='Grid' style={styles.userListWrapper}>
                         {usersList}
                     </Grid>
+                    {this.renderPlusButton()}
                 </Container>
             </>
         )

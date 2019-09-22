@@ -7,6 +7,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { loc } from 'texts';
+import { ActionButtonWrapper } from './styles';
+
 
 export const MediaCard = (props) => {
 
@@ -26,14 +28,16 @@ export const MediaCard = (props) => {
 
   const renderActionButtons = () => {
     return (
-      <CardActions>
-        <Button size="small" color="primary">
-          {loc('share')}
-        </Button>
-        <Button size="small" color="primary">
-          {loc('learnMore')}
-        </Button>
-      </CardActions>
+      <ActionButtonWrapper>
+        <CardActions>
+          <Button size="small" color="primary">
+            {loc('share')}
+          </Button>
+          <Button size="small" color="primary">
+            {loc('learnMore')}
+          </Button>
+        </CardActions>
+      </ActionButtonWrapper>
     )
   }
 

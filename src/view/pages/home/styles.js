@@ -1,3 +1,4 @@
+import { styled } from '@material-ui/styles';
 import { colors } from 'colors';
 
 export const styles = {
