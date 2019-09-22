@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import PageCreator from '@pages/page_creator/page_creator';
-import { Input } from '@components/input/input';
-import { Form } from '@components/form/form';
+import PageCreator from 'pages/page_creator/page_creator';
+import { Input } from'components/input/input';
+import { Form } from'components/form/form';
 import { styles, ActionButtons } from './styles';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';

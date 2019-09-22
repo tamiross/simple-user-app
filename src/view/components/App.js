@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import '@css/bootstrap-reboot.css';
-import '@css/bootstrap-grid.css';
-import '@css/bootstrap-align.css';
+import 'css/bootstrap-reboot.css';
+import 'css/bootstrap-grid.css';
+import 'css/bootstrap-align.css';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Discover from '@pages/discover';
-import Home from '@pages/home/home';
-import Register from '@pages/register/register';
-import  Blog from '@pages/blog/blog';
+import Discover from 'pages/discover';
+import Home from 'pages/home/home';
+import Register from 'pages/register/register';
+import  Blog from 'pages/blog/blog';
 
 const APP_BASE_STYLE_CLASS = 'app-body'
 

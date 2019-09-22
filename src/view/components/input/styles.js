@@ -1,4 +1,4 @@
-import { colors } from '@colors';
+import { colors } from 'colors';
 
 const base = {
     padding: '8px 16px',

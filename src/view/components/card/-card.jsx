@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 import { Base, Title, Hr, ActionButton, ActionButtonWrapper } from './styles';
-import Text from '@components/text/text';
+import Text from'components/text/text';
 import PropTypes from 'prop-types';
 import IconButton from '@material-ui/core/IconButton';
 import CommentIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 export default class Card extends Component {
-    componentDidMount() {
-        // console.log('CARD PROPS >> ', this.props)
-    }
     renderName() {
         const { name } = this.props;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BaseStyle } from './styles';
-import { Box } from '@components/box/box';
+import { Box } from'components/box/box';
 
 export const Form = props => {
     // const baseStyle = {...base, ...props.style}

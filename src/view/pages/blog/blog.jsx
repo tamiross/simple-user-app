@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import PageCreator from '@pages/page_creator/page_creator';
-import { getDemoData } from '@helpers';
-import BlogPostCard from '@components/blog_post_card/blog_post_card';
+import PageCreator from 'pages/page_creator/page_creator';
+import { getDemoData } from 'helpers';
+import BlogPostCard from'components/blog_post_card/blog_post_card';
 import Grid from '@material-ui/core/Grid';
-import { loc } from '@texts'
+import { loc } from 'texts'
 import * as config from 'config';
 
 export default class Blog extends Component {
@@ -34,7 +34,7 @@ export default class Blog extends Component {
 
         return (
             <Grid container spacing={8} className='Grid'>
-                <Grid item xs={4} sm={4} md={4} lg={3}>
+                <Grid item xs={12} >
                     <Grid container justify='center'>
                         <BlogPostCard {...props} />
                     </Grid>

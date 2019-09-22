@@ -46,16 +46,16 @@ module.exports = {
     resolve: {
         extensions: ['.mjs', '.ts', '.tsx', '.js', '.jsx'],
         alias: {
-            '@components': path.resolve(__dirname, './src/view/components'),
-            '@colors': path.resolve(__dirname, './src/view/colors'),
+            components: path.resolve(__dirname, './src/view/components'),
+            colors: path.resolve(__dirname, './src/view/colors'),
             config: path.resolve(__dirname, './src/view/config'),
-            '@pages': path.resolve(__dirname, './src/view/pages'),
-            '@texts': path.resolve(__dirname, './src/view/texts'),
-            '@css': path.resolve(__dirname, './src/css'),
-            '@store': path.resolve(__dirname, './src/store'),
-            '@helpers': path.resolve(__dirname, './src/view/helpers'),
-            '@utils': path.resolve(__dirname, './src/view/utils'),
-            '@icons': path.resolve(__dirname, './src/assets/icons/index')
+            pages: path.resolve(__dirname, './src/view/pages'),
+            texts: path.resolve(__dirname, './src/view/texts'),
+            css: path.resolve(__dirname, './src/css'),
+            store: path.resolve(__dirname, './src/store'),
+            helpers: path.resolve(__dirname, './src/view/helpers'),
+            utils: path.resolve(__dirname, './src/view/utils'),
+            icons: path.resolve(__dirname, './src/assets/icons/index')
         }
 
     },

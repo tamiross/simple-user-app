@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '@colors';
+import { colors } from 'colors';
 
 export const Base = styled.div`
 border: 1px solid ${colors.softGrey};

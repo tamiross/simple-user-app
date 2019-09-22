@@ -6,10 +6,10 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { styles } from './styles';
-import { loc } from '@texts';
-import A from '@components/a/a';
-import MenuDrawer from '@components/drawer/drawer';
-import { SearchBox } from '@components/search_box/search_box';
+import { loc } from 'texts';
+import A from'components/a/a';
+import MenuDrawer from'components/drawer/drawer';
+import { SearchBox } from'components/search_box/search_box';
 
 const menuItems = [
     { text: 'About', path: '/'},

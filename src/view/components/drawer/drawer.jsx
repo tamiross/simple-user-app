@@ -8,7 +8,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { useStyles } from './styles';
-// import * as icons from '@icons';
 import { Link } from 'react-router-dom';
 
 export default function MenuDrawer(props) {

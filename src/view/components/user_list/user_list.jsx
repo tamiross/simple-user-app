@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { MediaCard } from '@components/card/card';
+import { MediaCard } from'components/card/card';
 import { styles } from './styles';
 import Grid from '@material-ui/core/Grid';
 

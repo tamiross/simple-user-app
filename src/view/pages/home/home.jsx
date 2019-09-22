@@ -1,16 +1,15 @@
 
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Header } from '@components/header/header';
-import { addUser, deleteUser, fetchDemoData } from '@store/actions';
-import { getDemoData } from '@helpers';
+import { Header } from'components/header/header';
+import { addUser, deleteUser, fetchDemoData } from 'store/actions';
+import { getDemoData } from 'helpers';
 import * as config from 'config';
 import { styles } from './styles';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
-import UserList from '@components/user_list/user_list';
-import { loc } from '@texts';
+import UserList from'components/user_list/user_list';
+import { loc } from 'texts';
 import Grid from '@material-ui/core/Grid';
 import { Container } from '@material-ui/core';
 
@@ -109,10 +108,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(Home)
-
-// Home.PropTypes = {
-    // dispatch: propTypes.func,
-//     // users: propTypes.array
-// }
-
-// proptypes do not work.
