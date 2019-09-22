@@ -3,13 +3,14 @@ import { base } from './styles';
 
 export const Input = props => {
     const baseStyle = {...base, ...props.style}
-    const { type, placeholder, value  } = props;
+    const { type, placeholder, value, onChange  } = props;
     
     const inputProps = {
         style: baseStyle,
         type: type,
         value: value,
-        placeholder: placeholder
+        placeholder: placeholder,
+        onChange: onChange
     }
 
     return (

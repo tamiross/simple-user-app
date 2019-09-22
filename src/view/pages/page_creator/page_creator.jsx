@@ -4,9 +4,9 @@ import { Container } from '@material-ui/core';
 import { styles} from './styles';
 
 export default class PageCreator extends Component {
-    componentDidMount() {
-        console.log('Count: ', React.Children.count(this.props.children))
-    }
+    // componentDidMount() {
+    //     console.log('Count: ', React.Children.count(this.props.children))
+    // }
 
     render() {
         const { children, style } = this.props;

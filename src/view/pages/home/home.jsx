@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Header } from '@components/header/header';
 import { addUser, deleteUser, fetchDemoData } from '@store/actions';
-import { getDemoData } from '@helpers';
+import { getUsersDemoData } from '@helpers';
 import { styles } from './styles';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
@@ -25,7 +25,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        getDemoData()
+        getUsersDemoData()
             .then(json => {
                 this.props.dispatch(fetchDemoData(json));
                 this.setState({
@@ -34,7 +34,7 @@ class Home extends Component {
                 })
             })
             .catch(error => {
-                console.log('error white loading data:', error)
+                console.log('Error while loading data:', error)
             })
 
     }

@@ -11,6 +11,13 @@ import A from '@components/a/a';
 import MenuDrawer from '@components/drawer/drawer';
 import { SearchBox } from '@components/search_box/search_box';
 
+const menuItems = [
+    { text: 'About', path: '/'},
+    { text: 'Blog', path: '/blog'},
+    { text: 'Join', path: '/'},
+    { text: 'Register', path: '/register'}
+]
+
 export function Header() {
     const [state, setState] = React.useState({
         left: false,
@@ -64,7 +71,7 @@ export function Header() {
 
     return (
         <div style={styles.root}>
-            <MenuDrawer state={state} toggleDrawer={toggleDrawer} />
+            <MenuDrawer state={state} toggleDrawer={toggleDrawer} menuItems={menuItems} style={styles.menuDrawer}/>
             <AppBar position="static">
                 <Toolbar>
                     {renderMenuIconButton()}

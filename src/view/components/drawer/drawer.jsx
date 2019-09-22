@@ -8,10 +8,33 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { useStyles } from './styles';
-import * as icons from '@icons';
+// import * as icons from '@icons';
+import { Link } from 'react-router-dom';
 
 export default function MenuDrawer(props) {
-    console.log('drawer prpos', props)
+    const renderMenuItem = item => {
+        return (
+            <Link to={item.path}key={item.text}>
+                <ListItem button >
+                    <ListItemIcon>
+                        <InboxIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={item.text} />
+                </ListItem>
+            </Link>
+        )
+    }
+
+    const renderMenuItems = () => {
+        const { menuItems } = props;
+
+        return (
+            <List>
+                {menuItems.map(item => renderMenuItem(item))}
+            </List>
+        )
+    }
+
     const classes = useStyles();
 
     const sideList = side => (
@@ -30,14 +53,7 @@ export default function MenuDrawer(props) {
                 ))}
             </List>
             <Divider />
-            <List>
-                {['My Profile', 'My Messages', 'My View History', 'My Schedule'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
+            {renderMenuItems()}
         </div>
     );
 

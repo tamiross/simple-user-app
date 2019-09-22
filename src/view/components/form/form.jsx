@@ -9,7 +9,9 @@ export const Form = props => {
     return (
         <Box>
             <BaseStyle>
-                {children}
+                <form onSubmit={props.onSubmit}>
+                    {children}
+                </form>
             </BaseStyle>
         </Box>
     )

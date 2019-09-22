@@ -15,5 +15,9 @@ export const styles = {
 
     githubLink: {
       color: colors.white
+    },
+
+    menuDrawer: {
+      top: '64px'
     }
   };
