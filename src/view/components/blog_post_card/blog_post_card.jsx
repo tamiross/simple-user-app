@@ -34,13 +34,15 @@ export default function BlogPostCard(props) {
   }
 
   const renderCardContent = () => {
+    const { title, content } = props;
+
     return (
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
-          {props.title}
-        </Typography>
+          {title}
+        </Typography>z
         <Typography variant="body2" color="textSecondary" component="p">
-          {props.content}
+          {content}
         </Typography>
       </CardContent>
     )
@@ -54,9 +56,9 @@ export default function BlogPostCard(props) {
           image="/static/images/cards/contemplative-reptile.jpg"
           title="Contemplative Reptile"
         />
-        {this.renderCardContent()}
+        {renderCardContent()}
       </CardActionArea>
-      {this.renderCardActions()}
+      {renderCardActions()}
     </Card>
   );
 }

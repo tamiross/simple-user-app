@@ -10,6 +10,7 @@ const texts = {
   pleaseCheckYourConnection: 'Please check your connection to the internet.',
   somethingWentWrong: 'Something went wrong',
   weAreCurrentlyWorking: 'We are currently working on fixing the problem',
+  blogPage: 'Blog Page'
 }
 
 

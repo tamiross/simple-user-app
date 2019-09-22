@@ -1,9 +1,10 @@
-export function getUsersDemoData() {
-    return fetch('https://jsonplaceholder.typicode.com/users')
-        .then(res => res.json())
+
+const parseResponseAsJson = () => {
+    return res => res.json()
 }
 
-export function getPostsDemoData() {
-    return fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(res => res.json())
+export const getDemoData = (url) => {
+    return fetch(url)
+        .then(parseResponseAsJson())
+        .catch(error => console.log('Some error occured: ', error))
 }

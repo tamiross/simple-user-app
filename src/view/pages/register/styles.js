@@ -13,7 +13,7 @@ export const styles = {
     }
 }
 
-export const ActionButtons = styled.div`
-display: flex;
-justify-content: space-between;
-`
+export const ActionButtons = styled.div({
+    display: 'flex',
+    justifyContent: 'space-between'
+})

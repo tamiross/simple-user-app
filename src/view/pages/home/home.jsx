@@ -4,7 +4,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Header } from '@components/header/header';
 import { addUser, deleteUser, fetchDemoData } from '@store/actions';
-import { getUsersDemoData } from '@helpers';
+import { getDemoData } from '@helpers';
+import * as config from 'config';
 import { styles } from './styles';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
@@ -25,7 +26,9 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        getUsersDemoData()
+        const usersUrl = config.getUsersUrl();
+
+        getDemoData(usersUrl)
             .then(json => {
                 this.props.dispatch(fetchDemoData(json));
                 this.setState({

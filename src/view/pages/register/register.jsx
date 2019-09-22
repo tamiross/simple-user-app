@@ -46,7 +46,6 @@ export default class Register extends Component {
             <Form onSubmit={this.onFormSubmit}>
                 <Input type='text' placeholder='First Name' value={this.state.firstName} onChange={(e) => this.onInputChange(e, 'firstName')} />
                 <Input type='text' placeholder='Last Name' value={this.state.lastName} onChange={(e) => this.onInputChange(e, 'lastName')} />
-                {/* <hr /> */}
                 {this.renderActionButtons()}
             </Form>
         )

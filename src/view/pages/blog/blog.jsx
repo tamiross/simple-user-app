@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PageCreator from '@pages/page_creator/page_creator';
-import { getPostsDemoData } from '@helpers';
+import { getDemoData } from '@helpers';
 import BlogPostCard from '@components/blog_post_card/blog_post_card';
 import Grid from '@material-ui/core/Grid';
-
+import { loc } from '@texts'
+import * as config from 'config';
 
 export default class Blog extends Component {
     constructor(props) {
@@ -13,8 +14,11 @@ export default class Blog extends Component {
             posts: []
         }
     }
+
     componentDidMount() {
-        getPostsDemoData()
+        const postsUrl = config.getPostsUrl();
+
+        getDemoData(postsUrl)
             .then(json => {
                 this.setState({
                     posts: json
@@ -41,15 +45,19 @@ export default class Blog extends Component {
 
     renderPosts() {
         const { posts } = this.state;
+
+        if (!posts)
+            return null;
+
         return posts.map(post => this.renderPost(post));
     }
 
     render() {
         return (
             <PageCreator>
-                <h1>BLOG PAGE</h1>
+                <h1>{loc('blogPage')}</h1>
                 <div>
-                    {this.renderPosts()}
+                    {this.renderPosts() || <p>Nothing to display (yet!)</p>}
                 </div>
             </PageCreator>
         )
