@@ -3,6 +3,8 @@ import { MediaCard } from'components/media_card/media_card';
 import { styles } from './styles';
 import Grid from '@material-ui/core/Grid';
 import DefaultCoverImage from 'assets/images/default_cover_image.jpg'
+import DefaultUserCover from 'assets/images/default_user_cover.gif';
+
 
 export default class UserList extends Component {
     renderCard(user) {
@@ -14,7 +16,7 @@ export default class UserList extends Component {
             name: user.name,
             email: user.email,
             address: user.address,
-            image: DefaultCoverImage,
+            image: DefaultUserCover,
             onDeleteUserClick: onDeleteUserClick,
             // onEditUserClick: onEditUserClick
         }
