@@ -5,5 +5,5 @@ export const BaseStyle = styled.div({
     background: colors.white,
     padding: 24,
     border: `1px solid ${colors.softGrey}`,
-    borderRdius: 8,
+    borderRadius: '8px'
 })

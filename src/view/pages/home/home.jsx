@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Header } from 'components/header/header';
-import { addUser, deleteUser, fetchDemoData } from 'store/actions';
+import { addUser, deleteUser, fetchDemoData } from 'store/actions/actions';
 import { getDemoData } from 'helpers';
 import * as config from 'config';
 import { styles } from './styles';

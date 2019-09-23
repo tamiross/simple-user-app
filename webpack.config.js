@@ -25,6 +25,26 @@ module.exports = {
                 include: [path.resolve(__dirname, './src')],
                 loader: 'svg-inline-loader'
             },
+            // {
+            //     test: /\.(jpg|jpeg|gif|png)$/,
+            //     include: [path.resolve(__dirname, './src')],
+            //     loader: 'url-loader',
+            //     options: {
+            //         limit: 1024,
+            //         name: 'assets/images/[name].[ext]'
+            //     }
+            // },
+            {
+                test: /\.(png|jpg|gif)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                        },
+                    },
+                ],
+            },
             {
                 test: /\.s[ac]ss$/i,
                 use: [
@@ -50,6 +70,7 @@ module.exports = {
             colors: path.resolve(__dirname, './src/view/colors'),
             config: path.resolve(__dirname, './src/view/config'),
             pages: path.resolve(__dirname, './src/view/pages'),
+            assets: path.resolve(__dirname, './src/assets'),
             texts: path.resolve(__dirname, './src/view/texts'),
             css: path.resolve(__dirname, './src/css'),
             store: path.resolve(__dirname, './src/store'),

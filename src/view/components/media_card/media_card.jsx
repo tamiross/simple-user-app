@@ -1,23 +1,18 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import { loc } from 'texts';
-import { ActionButtonWrapper } from './styles';
+import { ActionButtonWrapper, Title, ContentBox, Content } from './styles';
+import { Box } from 'components/box/box'
 
-
-export const MediaCard = (props) => {
-
+export const MediaCard = props => {
   const renderCardMedia = () => {
     const props = {
       component: 'img',
       alt: 'img',
       height: '140',
-      image: '/x.jpg',
+      image: props.image, // TODO: pass from outside
       title: 'title goes here'
     }
 
@@ -43,30 +38,29 @@ export const MediaCard = (props) => {
 
   const renderCardTitle = () => {
     return (
-      <Typography gutterBottom variant="h5" component="h2">
+      <Title>
         {props.name}
-      </Typography>
+      </Title>
     )
   }
 
   const renderCardContent = () => {
     return (
-      <Typography variant="body2" color="textSecondary" component="p">
+      <Content>
         {loc('demoText')}
-      </Typography>
+      </Content>
     )
   }
 
+
   return (
-    <Card>
-      <CardActionArea>
-        {/* {renderCardMedia()} */}
-        <CardContent>
-          {renderCardTitle()}
-          {renderCardContent()}
-        </CardContent>
-      </CardActionArea>
+    <Box style={{ height: '100%', padding: 0 }}>
+      <img src={props.image} style={{ maxWidth: '100%' }} />
+      <ContentBox>
+        {renderCardTitle()}
+        {renderCardContent()}
+      </ContentBox>
       {renderActionButtons()}
-    </Card>
+    </Box>
   );
 }

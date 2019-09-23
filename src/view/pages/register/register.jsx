@@ -20,11 +20,20 @@ export default class Register extends Component {
 
     onFormSubmit = (e) => {
         e.preventDefault();
+        
     }
 
     onInputChange = (event, type) => {
         this.setState({
             [type]: event.target.value
+        })
+    }
+
+    onResetClick = e => {
+        e.preventDefault()
+        this.setState({
+            firstName: '',
+            lastName: ''
         })
     }
 
@@ -34,7 +43,7 @@ export default class Register extends Component {
                 <Button variant="contained" color='primary' style={styles.button} type='submit'>
                     {"Submit"}
                 </Button>
-                <Button variant="outlined" color='default' style={styles.button}>
+                <Button variant="outlined" color='default' style={styles.button} onClick={this.onResetClick}>
                     {"Reset"}
                 </Button>
             </ActionButtons>

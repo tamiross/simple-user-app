@@ -1,6 +1,4 @@
-export const ADD_USER = 'ADD_USER';
-export const DELETE_USER = 'DELETE_USER';
-export const FETCH_DEMO_DATA = 'FETCH_DEMO_DATA';
+import { ADD_USER, DELETE_USER, FETCH_DEMO_DATA, CLOSE_EDIT_FORM } from './action_types';
 
 export const addUser = () => ({
     type: ADD_USER

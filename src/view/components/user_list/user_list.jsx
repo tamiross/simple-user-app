@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
-import { MediaCard } from'components/card/card';
+import { MediaCard } from'components/media_card/media_card';
 import { styles } from './styles';
 import Grid from '@material-ui/core/Grid';
+import DefaultCoverImage from 'assets/images/default_cover_image.jpg'
 
 export default class UserList extends Component {
     renderCard(user) {
         const { onDeleteUserClick, onEditUserClick } = this.props;
 
         const props = {
-            id: user.id,
             key: user.id,
+            id: user.id,
             name: user.name,
             email: user.email,
             address: user.address,
-            style: styles,
+            image: DefaultCoverImage,
             onDeleteUserClick: onDeleteUserClick,
             // onEditUserClick: onEditUserClick
         }
