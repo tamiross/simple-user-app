@@ -6,7 +6,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import { useStyles } from './styles';
 import { Link } from 'react-router-dom';
 
@@ -43,14 +42,6 @@ export default function MenuDrawer(props) {
             onClick={props.toggleDrawer(side, false)}
             onKeyDown={props.toggleDrawer(side, false)}
         >
-            <List>
-                {['Discover', 'All Users', 'Map View'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
             <Divider />
             {renderMenuItems()}
         </div>

@@ -12,7 +12,6 @@ import UserList from 'components/user_list/user_list';
 import { loc } from 'texts';
 import Grid from '@material-ui/core/Grid';
 import { Container } from '@material-ui/core';
-
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -26,7 +25,6 @@ class Home extends Component {
 
     componentDidMount() {
         const usersUrl = config.getUsersUrl();
-
         getDemoData(usersUrl)
             .then(json => {
                 this.props.dispatch(fetchDemoData(json));
@@ -87,12 +85,12 @@ class Home extends Component {
         }
 
         const usersList = isDataLoaded ? <UserList {...userListProps} /> : this.renderNoDataMessage()
-
+        
         return (
             <>
                 <Header />
                 <Container fixed>
-                    <Grid container spacing={2} className='Grid' style={styles.userListWrapper}>
+                    <Grid container spacing={2} style={styles.userListWrapper}>
                         {usersList}
                     </Grid>
                     {this.renderPlusButton()}

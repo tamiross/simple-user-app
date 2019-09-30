@@ -7,15 +7,18 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { styles } from './styles';
 import { loc } from 'texts';
-import A from'components/a/a';
-import MenuDrawer from'components/drawer/drawer';
-import { SearchBox } from'components/search_box/search_box';
+import A from 'components/a/a';
+import MenuDrawer from 'components/drawer/drawer';
+import { SearchBox } from 'components/search_box/search_box';
+import icons from 'assets/icons/index'
 
+console.log('icons', icons)
 const menuItems = [
-    { text: 'About', path: '/'},
-    { text: 'Blog', path: '/blog'},
-    { text: 'Join', path: '/'},
-    { text: 'Register', path: '/register'}
+    { text: 'About', path: '/' },
+    { text: 'Blog', path: '/blog' },
+    { text: 'Join', path: '/' },
+    { text: 'Register', path: '/register' },
+    { text: 'Users', path: '/users' }
 ]
 
 export function Header() {
@@ -71,7 +74,7 @@ export function Header() {
 
     return (
         <div style={styles.root}>
-            <MenuDrawer state={state} toggleDrawer={toggleDrawer} menuItems={menuItems} style={styles.menuDrawer}/>
+            <MenuDrawer state={state} toggleDrawer={toggleDrawer} menuItems={menuItems} style={styles.menuDrawer} />
             <AppBar position="static">
                 <Toolbar>
                     {renderMenuIconButton()}

@@ -29,7 +29,7 @@ export const MediaCard = props => {
             {loc('share')}
           </Button>
           <Button size="small" color="primary">
-            {loc('learnMore')}
+            {loc('contact')}
           </Button>
         </CardActions>
       </ActionButtonWrapper>

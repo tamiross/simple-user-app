@@ -6,8 +6,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Discover from 'pages/discover';
 import Home from 'pages/home/home';
+import { HomeHooks } from 'pages/home/home_hooks';
 import Register from 'pages/register/register';
-import  Blog from 'pages/blog/blog';
+import Blog from 'pages/blog/blog';
 
 const APP_BASE_STYLE_CLASS = 'app-body'
 
@@ -25,6 +26,7 @@ export default class App extends Component {
                         <Route path='/blog' component={Blog} />
                         <Route path='/register' exact component={Register} />
                         <Route path='/' exact component={Home} />
+                        <Route path='/users' exact component={HomeHooks} />
                     </Switch>
                 </Router>
             </div>

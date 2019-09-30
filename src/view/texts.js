@@ -13,6 +13,7 @@ const texts = {
   blogPage: 'Blog Page',
   share: 'Share',
   learnMore: 'Learn more',
+  contact: 'Contact',
   demoText: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'
 }
 
