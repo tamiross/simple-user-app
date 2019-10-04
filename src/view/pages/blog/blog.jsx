@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PageCreator from 'pages/page_creator/page_creator';
 import { getDemoData } from 'helpers';
 import BlogPostCard from 'components/blog_post_card/blog_post_card';
-import Grid from '@material-ui/core/Grid';
 import { loc } from 'texts'
 import * as config from 'config';
 
@@ -28,17 +27,12 @@ export default class Blog extends Component {
 
     renderPost(post) {
         const props = {
+            key: post.title,
             title: post.title,
             content: post.body
         }
 
-        return (
-            <Grid item xs={12} md={6} lg={4} className='grid-item'>
-                <Grid container justify='center'>
-                    <BlogPostCard {...props} />
-                </Grid>
-            </Grid>
-        )
+        return <BlogPostCard {...props} />
     }
 
     renderPosts() {
@@ -47,11 +41,11 @@ export default class Blog extends Component {
         if (!posts)
             return null;
 
-        return (
-            <Grid container spacing={8} className='grid-container'>
-                {posts.map(post => this.renderPost(post))}
-            </Grid>
-        )
+        return posts.map(post => this.renderPost(post))
+    }
+
+    renderPlaceholder() {
+        return <p>Nothing to display (yet!)</p>
     }
 
     render() {
@@ -59,7 +53,7 @@ export default class Blog extends Component {
             <PageCreator>
                 <h1>{loc('blogPage')}</h1>
                 <div>
-                    {this.renderPosts() || <p>Nothing to display (yet!)</p>}
+                    {this.renderPosts() || this.renderPlaceholder() }
                 </div>
             </PageCreator>
         )
