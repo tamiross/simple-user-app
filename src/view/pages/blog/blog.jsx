@@ -6,7 +6,6 @@ import { loc } from 'texts'
 import BlogPostCard from 'components/blog_post_card/blog_post_card';
 import { Container } from '@material-ui/core';
 
-
 export default class Blog extends Component {
     constructor(props) {
         super(props);
@@ -47,7 +46,7 @@ export default class Blog extends Component {
     }
 
     renderPlaceholder() {
-        return <p>Nothing to display (yet!)</p>
+        return <p>{loc('nothingToDisplay')}</p>
     }
 
     render() {
