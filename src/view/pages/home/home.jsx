@@ -12,6 +12,7 @@ import UserList from 'components/user_list/user_list';
 import { loc } from 'texts';
 import Grid from '@material-ui/core/Grid';
 import { Container } from '@material-ui/core';
+
 class Home extends Component {
     constructor(props) {
         super(props);

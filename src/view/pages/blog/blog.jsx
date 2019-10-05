@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PageCreator from 'pages/page_creator/page_creator';
-import { getDemoData } from 'helpers';
-import BlogPostCard from 'components/blog_post_card/blog_post_card';
-import { loc } from 'texts'
 import * as config from 'config';
+import { getDemoData } from 'helpers';
+import { loc } from 'texts'
+import BlogPostCard from 'components/blog_post_card/blog_post_card';
+import { Container } from '@material-ui/core';
+
 
 export default class Blog extends Component {
     constructor(props) {
@@ -51,10 +53,12 @@ export default class Blog extends Component {
     render() {
         return (
             <PageCreator>
-                <h1>{loc('blogPage')}</h1>
-                <div>
-                    {this.renderPosts() || this.renderPlaceholder() }
-                </div>
+                <Container fixed>
+                    <h1>{loc('blogPage')}</h1>
+                    <div>
+                        {this.renderPosts() || this.renderPlaceholder()}
+                    </div>
+                </Container>
             </PageCreator>
         )
     }

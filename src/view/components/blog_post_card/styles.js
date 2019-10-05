@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
+import { colors } from 'colors';
 
 export const useStyles = makeStyles({
   card: {
@@ -13,39 +14,58 @@ export const useStyles = makeStyles({
   base: {
     display: 'flex',
   },
-  
+
   postImage: {
     marginRight: 12,
     width: 190
   }
 });
 
-export const Wrapper = styled.div`
-display: flex;
-padding-top: 16px;
-padding-bottom: 16px;
-border-bottom: 1px solid #e8e8e8;
-&:hover: {
-  background: white;
-}
-`
+export const Wrapper = styled.div({
+  display: 'flex',
+  flexDirection: 'column',
+  paddingRight: 16,
+  paddingTop: '16px',
+  paddingBottom: '16px',
+  borderBottom: `1px solid ${colors.borderGrey}`,
+  transition: '0.3s',
+  cursor: 'pointer',
+  '@media (min-width: 992px)': {
+    flexDirection: 'row',
+    ':hover': {
+      background: colors.white,
+      transition: '0.3s',
+      borderBottom: `1px solid ${colors.borderBlue}`
+    }
+  }
+})
 
-export const ImageWrapper = styled.div`
-  margin-right: 12px;
-  max-width: 190px;
-`
 
-export const Subtitle = styled.div`
-  color: #888;
-  font-size: 12px;
-  margin-bottom: 4px;
-`
 
-export const ReadMore = styled.div`
-  color: #3F51B5;
-  font-weight: 600;
-`
+export const ImageWrapper = styled.div({
+  marginRight: 12,
+  width: '100%',
+  '@media (min-width: 992px)': {
+    maxWidth: 190
+  }
+})
 
-export const Content = styled.div`
-  color: #353536;
-`
+export const BlogImage = styled.img({
+  width: '100%'
+})
+
+export const Subtitle = styled.div({
+  color: colors.grey,
+  fontSize: 12,
+  marginBottom: 4
+})
+
+
+export const ReadMore = styled.div({
+  color: colors.lightPurple,
+  fontWeight: 600
+})
+
+export const Content = styled.div({
+  color: colors.deepGrey
+})
