@@ -1,7 +1,7 @@
 import React from 'react';
-import { Header } from'components/header/header';
 import { styles } from './styles';
 import { loc } from 'texts';
+import { Box } from 'components/box/box';
 
 const APP_BASE_STYLE_CLASS = 'app-body'
 
@@ -16,7 +16,7 @@ class ErrorBoundary extends React.Component {
 
   componentDidMount() {
     document.body.classList.add(APP_BASE_STYLE_CLASS);
-}
+  }
 
   static getDerivedStateFromError(error) {
     return {
@@ -31,13 +31,13 @@ class ErrorBoundary extends React.Component {
   render() {
     const { hasError } = this.state;
 
-    if (hasError) {
+    if (!hasError) {
       return (
         <div style={styles.base}>
-          <div style={styles.messageBox}>
+          <Box style={styles.messageBox}>
             <h1>{loc('somethingWentWrong')}</h1>
             <p>{loc('weAreCurrentlyWorking')}</p>
-          </div>
+          </Box>
         </div>
       )
     }
