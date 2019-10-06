@@ -1,7 +1,11 @@
 import React from 'react';
 import { BaseStyle } from './styles';
 
-export const Box = props => {
+interface IBoxProps {
+    style?: {}
+}
+
+export const Box: React.FC<IBoxProps> = props => {
     const children = props.children;
 
     return (

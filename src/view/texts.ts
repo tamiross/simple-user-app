@@ -2,7 +2,7 @@ const links = {
   linkToGithub: 'https://github.com/tamiross/simple-user-app'
 }
 
-const texts = {
+const texts: { [index: string]: any } = {
   ...links,
   viewOnGithub: 'View on github',
   allUsers: 'All users',
@@ -20,7 +20,7 @@ const texts = {
 }
 
 
-export function loc(textKey, ...args) {
+export function loc(textKey: string, ...args: any): string {
   let text = texts[textKey] || textKey;
   if (args) {
     for (let arg of args)

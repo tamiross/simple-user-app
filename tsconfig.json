@@ -1,0 +1,52 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "noImplicitAny": true,
+        "module": "es6",
+        "target": "es5",
+        "jsx": "react",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "experimentalDecorators": true,
+        "baseUrl": "./",
+        "paths": {
+            "components/*": [
+                "./src/view/components/*"
+            ],
+            "colors": [
+                "./src/view/colors"
+            ],
+            "config": [
+                "./src/view/config"
+            ],
+            "pages/*": [
+                "./src/view/pages/*"
+            ],
+            "assets/*": [
+                "./src/assets/*"
+            ],
+            "icons/*": [
+                "./src/assets/icons/*"
+            ],
+            "texts": [
+                "./src/view/texts.ts"
+            ],
+            "css/*": [
+                "./src/css/*"
+            ],
+            "store/*": [
+                "./src/store/*"
+            ],
+            "helpers": [
+                "./src/view/helpers"
+            ],
+            "utils": [
+                "./src/view/utils"
+            ]
+        }
+    },
+    "include": [
+        "./src/**/*"
+      ]
+}
