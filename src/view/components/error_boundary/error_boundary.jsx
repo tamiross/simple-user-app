@@ -31,7 +31,7 @@ class ErrorBoundary extends React.Component {
   render() {
     const { hasError } = this.state;
 
-    if (!hasError) {
+    if (hasError) {
       return (
         <div style={styles.base}>
           <Box style={styles.messageBox}>
